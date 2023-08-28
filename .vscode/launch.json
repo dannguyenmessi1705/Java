@@ -1,0 +1,124 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CB08_TinhTong",
+      "request": "launch",
+      "mainClass": "CB08_TinhTong",
+      "projectName": "JAVA_f99b856"
+    },
+    {
+      "type": "java",
+      "name": "BucketSort",
+      "request": "launch",
+      "mainClass": "BucketSort",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch replace",
+      "request": "launch",
+      "mainClass": "replace",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch Hello",
+      "request": "launch",
+      "mainClass": "Hello",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch OPPClassCircus",
+      "request": "launch",
+      "mainClass": "OPPClassCircus",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch OPPClassStudent",
+      "request": "launch",
+      "mainClass": "OPPClassStudent",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch OPPConstructor",
+      "request": "launch",
+      "mainClass": "OPPConstructor",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch OPPDienTichHCN",
+      "request": "launch",
+      "mainClass": "OPPDienTichHCN",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch OPPStudent",
+      "request": "launch",
+      "mainClass": "OPPStudent",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch Sum",
+      "request": "launch",
+      "mainClass": "Sum",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch a",
+      "request": "launch",
+      "mainClass": "a",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch random",
+      "request": "launch",
+      "mainClass": "random",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch replace",
+      "request": "launch",
+      "mainClass": "replace",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Launch Math1",
+      "request": "launch",
+      "mainClass": "Math1"
+    },
+    {
+      "type": "java",
+      "name": "Launch Sum(1)",
+      "request": "launch",
+      "mainClass": "Sum"
+    }
+  ]
+}
