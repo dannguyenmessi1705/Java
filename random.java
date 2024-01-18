@@ -7,7 +7,7 @@ public class random {
         int max=sc.nextInt();
         int size=max-min+1;
         int random=(int)(Math.random()*size)+min;
-        System.out.println(random);
+        System.out.print(random);
         sc.close();
     }
     

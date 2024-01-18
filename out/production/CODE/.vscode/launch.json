@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CB08_TinhTong",
+      "request": "launch",
+      "mainClass": "CB08_TinhTong",
+      "projectName": "JAVA_f99b856"
+    },
+    {
+      "type": "java",
       "name": "BucketSort",
       "request": "launch",
       "mainClass": "BucketSort",

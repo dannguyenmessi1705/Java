@@ -1,0 +1,17 @@
+Trong project này nói về:
+    - Tạo và đăng ký route (src/main/java/com.example.demo/controller)
+    - Thêm RequestBody vào khi gọi API (src/main/java/com.example.demo/controller), (src/main/java/com.example.demo/model)
+    - ORM Map với Database (src/main/java/com.example.demo/entity)
+    - Kết nối với Database MYSQL (src/main/resources/application.properties)
+    - Sư dụng JPA để thao tác với Database (src/main/java/com.example.demo/repository)
+        + Tạo interface kế thừa JpaRepository (JpaRepository<entity, id> trong đó entity là class entity, id là kiểu dữ liệu của id trong entity)
+        + Tạo class implement interface trên 
+        + Dùng các annotation như 
+            @Bean (khai báo dùng để đánh dấu method là Bean), 
+            @Component (khai báo dùng để đánh dấu class là Bean), 
+            @Service (khai báo dùng để xử lý logic), 
+            @Repository(khai báo dùng để query với Database) 
+          để đăng ký Bean trong Spring Container, đưa lên IOC Container để quản lý, khi có yêu cầu sẽ từ IOC eject ra các class và sử dụng
+        + Sử dụng @Autowired để inject Bean vào trong class (src/main/java/com.example.demo/controller), có thể dùng @Qualifier để chỉ định Bean cần inject
+    - Sử dụng kỹ thuật DTO (Data Transfer Object) để truyền dữ liệu sang JSON (src/main/java/com.example.demo/dto, controller)
+    Do trong entity có thể có những trường không cần thiết trả về cho client, nên ta tạo ra một class DTO để trả về cho client, class này chỉ có những trường cần thiết

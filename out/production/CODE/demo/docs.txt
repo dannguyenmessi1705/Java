@@ -1,0 +1,5 @@
+Trong project này nói về:
+    - Tạo và đăng ký route (src/main/java/com.example.demo/controller)
+    - Thêm RequestBody vào khi gọi API (src/main/java/com.example.demo/controller), (src/main/java/com.example.demo/model)
+    - ORM Map với Database (src/main/java/com.example.demo/entity)
+    - Kết nối với Database MYSQL (src/main/resources/application.properties)
