@@ -3,25 +3,27 @@ package com.example.demo.service;
 import com.example.demo.dto.RoleDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.entity.Users;
-import com.example.demo.repository.UserInterface;
+import com.example.demo.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.demo.service.impl.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service("UserLoginService") // Đăng ký Bean với tên là UserLoginService, Đánh dấu đây là Service (xử lý
                              // nghiệp vụ) để đưa vào IOC Container
-public class UserLoginService {
+public class UserLoginService implements LoginServiceImpl {
 
     @Autowired // Tiêm UserRepository vào đây (tự động tìm kiếm và tiêm)
-    @Qualifier("UserInterface") // Chỉ định Bean cần tiêm
-    UserInterface userInterface;
+    @Qualifier("UserRepository") // Chỉ định Bean cần tiêm
+    UserRepository userRepository;
 
+    @Override
     public List<UserDTO> getAllUser() {
-        List<Users> users = userInterface.findAll(); // Lấy tất cả dữ liệu từ bảng users trong database
+        List<Users> users = userRepository.findAll(); // Lấy tất cả dữ liệu từ bảng users trong database
         List<UserDTO> userDTOs = new ArrayList<>(); // Khởi tạo 1 List rỗng để chứa dữ liệu sau khi chuyển đổi
         for (Users user : users) {
             UserDTO userDTO = new UserDTO(); // Khởi tạo đối tượng UserDTO
@@ -40,4 +42,10 @@ public class UserLoginService {
         }
         return userDTOs; // Trả về cho Controller
     } // Lấy dữ liệu từ database và trả về cho Controller
+
+    @Override
+    public Boolean checkLogin(String username, String password) {
+        List<Users> users = userRepository.findByUsernameAndPassword(username, password);
+        return users.size() > 0; // Nếu tìm thấy user thì trả về true, ngược lại trả về false
+    } // Kiểm tra login
 }

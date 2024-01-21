@@ -16,9 +16,10 @@ package com.example.demo.controller;
  * PatchMapping: nhận dữ liệu dạng PATCH
  * */
 
+import com.example.demo.payload.Payload;
+import com.example.demo.service.impl.LoginServiceImpl;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 //import org.springframework.http.HttpStatusCode; // Để trả về mã lỗi HTTP
 import org.springframework.http.HttpStatus; // Để trả về mã lỗi HTTP
 import org.springframework.http.ResponseEntity; // Để trả về dữ liệu dạng JSON, kết hợp với HttpStatus để trả về mã lỗi HTTP
@@ -32,13 +33,30 @@ import java.util.List;
 public class UserController {
     // Query từ database
     @Autowired // Tiêm UserLoginService vào đây (tự động tìm kiếm và tiêm)
-    @Qualifier("UserLoginService") // Chỉ định Bean cần tiêm
-    UserLoginService userLoginService; // Khởi tạo đối tượng UserLoginService
+    LoginServiceImpl loginServiceImpl; // Khởi tạo đối tượng UserLoginService
 
     @GetMapping("/getAllUser") // Đăng ký đường dẫn cho phương thức này là GET, có endpoint là /getAllUser
     // (đường dẫn cuối cùng là /user/getAllUser)
     public ResponseEntity<?> getAllUser() {
-        return new ResponseEntity<>(userLoginService.getAllUser(), HttpStatus.OK); // Trả về dữ liệu dạng JSON
+        Payload payload = new Payload();
+        payload.setData(loginServiceImpl.getAllUser());
+        return new ResponseEntity<>(payload, HttpStatus.OK); // Trả về dữ liệu dạng JSON
+    }
+
+    // SignIn
+    @PostMapping("/signin")
+    public ResponseEntity<?> signIn(@RequestParam String username, @RequestParam String password){
+        Payload payload = new Payload();
+        if (loginServiceImpl.checkLogin(username, password)){
+            payload.setDescription("Login successfully");
+            payload.setData(true);
+        }
+        else {
+            payload.setStatusCode(401);
+            payload.setDescription("Username or Password is failed");
+            payload.setData(false);
+        }
+        return new ResponseEntity<>(payload, HttpStatus.OK);
     }
 
     @GetMapping("/add") // Đăng ký đường dẫn cho phương thức này là GET, có endpoint là /add (đường dẫn
