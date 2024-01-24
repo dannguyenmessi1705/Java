@@ -6,8 +6,6 @@ public class CustomerInvoice {
         Invoice invoice1 = new Invoice(1705, customer1, 90000);
         System.out.println("Customer Name: "+invoice1.getCustomerName());
         System.out.println("Amount: "+invoice1.getAmountAfterDiscount());
-
-
     }    
 }
 class Customer{

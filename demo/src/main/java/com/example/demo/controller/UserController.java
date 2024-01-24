@@ -16,7 +16,8 @@ package com.example.demo.controller;
  * PatchMapping: nhận dữ liệu dạng PATCH
  * */
 
-import com.example.demo.payload.Payload;
+import com.example.demo.payload.ResponseData;
+import com.example.demo.payload.request.SignupRequest;
 import com.example.demo.service.impl.LoginServiceImpl;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus; // Để trả về mã lỗi HTTP
 import org.springframework.http.ResponseEntity; // Để trả về dữ liệu dạng JSON, kết hợp với HttpStatus để trả về mã lỗi HTTP
 import com.example.demo.model.User;
-import com.example.demo.service.UserLoginService;
 
 import java.util.List;
 
@@ -38,22 +38,36 @@ public class UserController {
     @GetMapping("/getAllUser") // Đăng ký đường dẫn cho phương thức này là GET, có endpoint là /getAllUser
     // (đường dẫn cuối cùng là /user/getAllUser)
     public ResponseEntity<?> getAllUser() {
-        Payload payload = new Payload();
+        ResponseData payload = new ResponseData();
         payload.setData(loginServiceImpl.getAllUser());
         return new ResponseEntity<>(payload, HttpStatus.OK); // Trả về dữ liệu dạng JSON
     }
 
     // SignIn
     @PostMapping("/signin")
-    public ResponseEntity<?> signIn(@RequestParam String username, @RequestParam String password){
-        Payload payload = new Payload();
-        if (loginServiceImpl.checkLogin(username, password)){
+    public ResponseEntity<?> signIn(@RequestParam String username, @RequestParam String password) {
+        ResponseData payload = new ResponseData();
+        if (loginServiceImpl.checkLogin(username, password)) {
             payload.setDescription("Login successfully");
             payload.setData(true);
-        }
-        else {
+        } else {
             payload.setStatusCode(401);
             payload.setDescription("Username or Password is failed");
+            payload.setData(false);
+        }
+        return new ResponseEntity<>(payload, HttpStatus.OK);
+    }
+
+    // SignUp
+    @PostMapping("/signup")
+    public ResponseEntity<?> signUp(@RequestBody SignupRequest signupRequest) {
+        ResponseData payload = new ResponseData();
+        if (loginServiceImpl.checkSignup(signupRequest)) {
+            payload.setDescription("Signup successfully");
+            payload.setData(true);
+        } else {
+            payload.setStatusCode(401);
+            payload.setDescription("Signup failed");
             payload.setData(false);
         }
         return new ResponseEntity<>(payload, HttpStatus.OK);

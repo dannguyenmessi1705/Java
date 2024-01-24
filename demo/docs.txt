@@ -17,4 +17,4 @@ Trong project này nói về:
     Do trong entity có thể có những trường không cần thiết trả về cho client, nên ta tạo ra một class DTO để trả về cho client, class này chỉ có những trường cần thiết
     - Tạo các Custom JPA query (find(Count)(First, Top10)By(Username)(OrderBy)(Asc), findAllBy, ...) (src/main/java/com.example.demo/repository)
     - Tạo Implement để loại bỏ Dependency (src/main/java/com.example.demo/service/impl). Khi gọi hàm chỉ cần gọi interface, nó sẽ tự động gọi đến class implement interface đó
-    - Tạo Payload để trả về cho client (src/main/java/com.example.demo/payload)
+    - Tạo Payload để trả về cho client hoặc để client request lên server (src/main/java/com.example.demo/payload)

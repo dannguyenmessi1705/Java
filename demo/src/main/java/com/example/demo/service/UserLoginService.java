@@ -2,10 +2,14 @@ package com.example.demo.service;
 
 import com.example.demo.dto.RoleDTO;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.entity.Roles;
 import com.example.demo.entity.Users;
+import com.example.demo.payload.request.SignupRequest;
+import com.example.demo.repository.RoleRepository;
 import com.example.demo.repository.UserRepository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.example.demo.service.impl.LoginServiceImpl;
@@ -16,10 +20,12 @@ import org.springframework.stereotype.Service;
 @Service("UserLoginService") // Đăng ký Bean với tên là UserLoginService, Đánh dấu đây là Service (xử lý
                              // nghiệp vụ) để đưa vào IOC Container
 public class UserLoginService implements LoginServiceImpl {
-
     @Autowired // Tiêm UserRepository vào đây (tự động tìm kiếm và tiêm)
-    @Qualifier("UserRepository") // Chỉ định Bean cần tiêm
+    @Qualifier("UserRepository")
     UserRepository userRepository;
+    @Autowired
+    @Qualifier("RoleRepository")
+    RoleRepository roleRepository;
 
     @Override
     public List<UserDTO> getAllUser() {
@@ -48,4 +54,29 @@ public class UserLoginService implements LoginServiceImpl {
         List<Users> users = userRepository.findByUsernameAndPassword(username, password);
         return users.size() > 0; // Nếu tìm thấy user thì trả về true, ngược lại trả về false
     } // Kiểm tra login
+
+    @Override
+    public Boolean checkSignup(SignupRequest signupRequest) {
+        try {
+            List<Users> users = userRepository.findByUsername(signupRequest.getUsername()); // Tìm kiếm user theo username
+            List<Roles> roles = roleRepository.findById(signupRequest.getRole_id());
+            if ((users.size() > 0) && (roles.size() == 0)) { // Nếu tìm thấy user thì trả về false (Không signup được)
+                return false;
+            } else {
+                Users user = new Users(); // Khởi tạo đối tượng Users
+                Roles role = new Roles(); // Khởi tạo đối tượng Roles
+                user.setUsername(signupRequest.getUsername()); // Gán dữ liệu cho các trường
+                user.setPassword(signupRequest.getPassword()); // Gán dữ liệu cho các trường
+                user.setFullName(signupRequest.getFullName());
+                user.setAge(signupRequest.getAge());
+                user.setCreatedAt(new Date());
+                role.setId(signupRequest.getRole_id());
+                user.setRole(role);
+                userRepository.save(user); // Lưu vào database
+                return true; // Trả về true (signup thành công)
+            }
+        } catch (Exception e) { // Nếu có lỗi thì trả về false
+            return false;
+        }
+    }
 }

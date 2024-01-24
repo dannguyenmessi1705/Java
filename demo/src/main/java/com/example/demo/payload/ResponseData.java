@@ -1,15 +1,15 @@
 package com.example.demo.payload;
 
 // Class trả về cho User
-public class Payload {
+public class ResponseData {
     private int statusCode = 200;
     private String description;
     private Object data;
 
-    public Payload() {
+    public ResponseData() {
     }
 
-    public Payload(int statusCode, String description, Object data) {
+    public ResponseData(int statusCode, String description, Object data) {
         this.statusCode = statusCode;
         this.description = description;
         this.data = data;
