@@ -18,3 +18,4 @@ Trong project này nói về:
     - Tạo các Custom JPA query (find(Count)(First, Top10)By(Username)(OrderBy)(Asc), findAllBy, ...) (src/main/java/com.example.demo/repository)
     - Tạo Implement để loại bỏ Dependency (src/main/java/com.example.demo/service/impl). Khi gọi hàm chỉ cần gọi interface, nó sẽ tự động gọi đến class implement interface đó
     - Tạo Payload để trả về cho client hoặc để client request lên server (src/main/java/com.example.demo/payload)
+    - Tạo API đăng ký tài khoản (src/main/java/com.example.demo/controller) (src/main/java/com.example.demo/payload/request/SignUpRequest) (src/main/java/com.example.demo/service/impl/LoginServiceImpl) (src/main/java/com.example.demo/security/service/UserLoginService)
