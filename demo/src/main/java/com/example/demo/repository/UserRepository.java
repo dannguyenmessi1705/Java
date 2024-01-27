@@ -20,5 +20,5 @@ public interface UserRepository extends JpaRepository<Users, Integer> { // Kế 
     List<Users> findByUsernameAndPassword(String username, String password);
 
     // Tìm kiếm user theo username
-    List<Users> findByUsername(String username);
+    Users findByUsername(String username);
 }

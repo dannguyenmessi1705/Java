@@ -19,3 +19,13 @@ Trong project này nói về:
     - Tạo Implement để loại bỏ Dependency (src/main/java/com.example.demo/service/impl). Khi gọi hàm chỉ cần gọi interface, nó sẽ tự động gọi đến class implement interface đó
     - Tạo Payload để trả về cho client hoặc để client request lên server (src/main/java/com.example.demo/payload)
     - Tạo API đăng ký tài khoản (src/main/java/com.example.demo/controller) (src/main/java/com.example.demo/payload/request/SignUpRequest) (src/main/java/com.example.demo/service/impl/LoginServiceImpl) (src/main/java/com.example.demo/security/service/UserLoginService)
+    - Dùng Spring Security để bảo vệ route, phân quyền (src/main/java/com.example.demo/security)
+      + Custom FilterSecurity để bảo vệ route (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+      + Dùng Bcrypt để mã hóa password (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+      + SingIn và SignUp theo chuẩn mã hóa password Bcrypt (src/main/java/com.example.demo/service/UserLoginService)
+      + Theo chuẩn BasicAuth (không cần dùng trang login, chỉ cần gửi username và password lên server để xác thực)
+        ** Tạo UserDetailService mặc định đưa lên Memory theo BasicAuth (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+        ** Custom lại UserDetailService để lấy thông tin user từ Database (src/main/java/com.example.demo/security/CustomerFilterSecurity), (src/main/java/com.example.demo/security/service/CustomUserDetailService)
+      + Dùng JWT để xác thực
+        ** Viết đoạn code tạo 1 SecretKey rồi thêm vào application.properties, sau khi tạo xong, xóa code (src/main/java/com.example.demo/controller/AuthController)
+        ** Tạo class JwtUtils để tạo JWT cho mỗi lần SignIn, trả về token (src/main/java/com.example.demo/utils/JwtUtils)

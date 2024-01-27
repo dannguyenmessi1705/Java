@@ -3,16 +3,16 @@ package com.example.demo.payload;
 // Class trả về cho User
 public class ResponseData {
     private int statusCode = 200;
+    private boolean isSuccess = true;
     private String description;
     private Object data;
 
-    public ResponseData() {
+    public boolean isSuccess() {
+        return isSuccess;
     }
 
-    public ResponseData(int statusCode, String description, Object data) {
-        this.statusCode = statusCode;
-        this.description = description;
-        this.data = data;
+    public void setSuccess(boolean success) {
+        isSuccess = success;
     }
 
     public int getStatusCode() {

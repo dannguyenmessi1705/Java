@@ -11,21 +11,28 @@ import com.example.demo.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import com.example.demo.service.impl.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service("UserLoginService") // Đăng ký Bean với tên là UserLoginService, Đánh dấu đây là Service (xử lý
                              // nghiệp vụ) để đưa vào IOC Container
 public class UserLoginService implements LoginServiceImpl {
+    private final UserRepository userRepository; // Khai báo biến userRepository để tiêm vào đây
+    private final RoleRepository roleRepository; // Khai báo biến roleRepository để tiêm vào đây
+    private final PasswordEncoder passwordEncoder; // Khai báo biến passwordEncoder để tiêm vào đây
+
     @Autowired // Tiêm UserRepository vào đây (tự động tìm kiếm và tiêm)
-    @Qualifier("UserRepository")
-    UserRepository userRepository;
-    @Autowired
-    @Qualifier("RoleRepository")
-    RoleRepository roleRepository;
+    public UserLoginService(UserRepository userRepository, RoleRepository roleRepository,
+            PasswordEncoder passwordEncoder) { // Khởi tạo đối tượng UserLoginService
+        this.userRepository = userRepository; // Gán giá trị cho biến userRepository
+        this.roleRepository = roleRepository; // Gán giá trị cho biến roleRepository
+        this.passwordEncoder = passwordEncoder; // Gán giá trị cho biến passwordEncoder
+    }
 
     @Override
     public List<UserDTO> getAllUser() {
@@ -51,22 +58,26 @@ public class UserLoginService implements LoginServiceImpl {
 
     @Override
     public Boolean checkLogin(String username, String password) {
-        List<Users> users = userRepository.findByUsernameAndPassword(username, password);
-        return users.size() > 0; // Nếu tìm thấy user thì trả về true, ngược lại trả về false
+        Users user = userRepository.findByUsername(username); // Tìm kiếm user theo username
+        if (user == null)
+            return false; // Nếu không tìm thấy user thì trả về false (Không login được)
+        return passwordEncoder.matches(password, user.getPassword()); // So sánh password, đúng thì trả về true, ngược
+                                                                      // lại trả về false
     } // Kiểm tra login
 
     @Override
     public Boolean checkSignup(SignupRequest signupRequest) {
         try {
-            List<Users> users = userRepository.findByUsername(signupRequest.getUsername()); // Tìm kiếm user theo username
+            Users users = userRepository.findByUsername(signupRequest.getUsername()); // Tìm kiếm user theo username
             List<Roles> roles = roleRepository.findById(signupRequest.getRole_id());
-            if ((users.size() > 0) && (roles.size() == 0)) { // Nếu tìm thấy user thì trả về false (Không signup được)
+            if ((users == null) && (roles.size() == 0)) { // Nếu tìm thấy user thì trả về false (Không signup được)
                 return false;
             } else {
                 Users user = new Users(); // Khởi tạo đối tượng Users
                 Roles role = new Roles(); // Khởi tạo đối tượng Roles
                 user.setUsername(signupRequest.getUsername()); // Gán dữ liệu cho các trường
-                user.setPassword(signupRequest.getPassword()); // Gán dữ liệu cho các trường
+                user.setPassword(passwordEncoder.encode(signupRequest.getPassword())); // Mã hóa mật khẩu trước khi lưu
+                                                                                       // vào database
                 user.setFullName(signupRequest.getFullName());
                 user.setAge(signupRequest.getAge());
                 user.setCreatedAt(new Date());
@@ -78,5 +89,5 @@ public class UserLoginService implements LoginServiceImpl {
         } catch (Exception e) { // Nếu có lỗi thì trả về false
             return false;
         }
-    }
+    } // Kiểm tra signup
 }

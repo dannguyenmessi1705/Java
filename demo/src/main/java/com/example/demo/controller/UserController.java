@@ -43,36 +43,6 @@ public class UserController {
         return new ResponseEntity<>(payload, HttpStatus.OK); // Trả về dữ liệu dạng JSON
     }
 
-    // SignIn
-    @PostMapping("/signin")
-    public ResponseEntity<?> signIn(@RequestParam String username, @RequestParam String password) {
-        ResponseData payload = new ResponseData();
-        if (loginServiceImpl.checkLogin(username, password)) {
-            payload.setDescription("Login successfully");
-            payload.setData(true);
-        } else {
-            payload.setStatusCode(401);
-            payload.setDescription("Username or Password is failed");
-            payload.setData(false);
-        }
-        return new ResponseEntity<>(payload, HttpStatus.OK);
-    }
-
-    // SignUp
-    @PostMapping("/signup")
-    public ResponseEntity<?> signUp(@RequestBody SignupRequest signupRequest) {
-        ResponseData payload = new ResponseData();
-        if (loginServiceImpl.checkSignup(signupRequest)) {
-            payload.setDescription("Signup successfully");
-            payload.setData(true);
-        } else {
-            payload.setStatusCode(401);
-            payload.setDescription("Signup failed");
-            payload.setData(false);
-        }
-        return new ResponseEntity<>(payload, HttpStatus.OK);
-    }
-
     @GetMapping("/add") // Đăng ký đường dẫn cho phương thức này là GET, có endpoint là /add (đường dẫn
     // cuối cùng là /user/add)
     public String add() {

@@ -17,7 +17,7 @@ public class Users {
     @Column(name = "age", length = 10, nullable = false) // Map với cột age trong database
     private int age;
 
-    @Column(name = "username", length = 50, nullable = false) // Map với cột username trong database
+    @Column(name = "username", length = 50, nullable = false, unique = true) // Map với cột username trong database
     private String username; // Tên đăng nhập
 
     @Column(name = "password", length = 500, nullable = false) // Map với cột password trong database
