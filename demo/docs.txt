@@ -29,3 +29,6 @@ Trong project này nói về:
       + Dùng JWT để xác thực
         ** Viết đoạn code tạo 1 SecretKey rồi thêm vào application.properties, sau khi tạo xong, xóa code (src/main/java/com.example.demo/controller/AuthController)
         ** Tạo class JwtUtils để tạo JWT cho mỗi lần SignIn, trả về token (src/main/java/com.example.demo/utils/JwtUtils)
+        ** Tắt Session trong Spring Security và HttpBasic (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+        ** Thêm hàm giải mã token và xác thực Token trong class JwtUtils (src/main/java/com.example.demo/utils/JwtUtils)
+        ** Tạo Filter để lấy token từ header, kiểm tra token có hợp lệ hay không, nếu hợp lệ thì lấy thông tin user từ token và đưa lên SecurityContextHolder (src/main/java/com.example.demo/security/JwtAuthenticationFilter)
