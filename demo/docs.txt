@@ -32,3 +32,9 @@ Trong project này nói về:
         ** Tắt Session trong Spring Security và HttpBasic (src/main/java/com.example.demo/security/CustomerFilterSecurity)
         ** Thêm hàm giải mã token và xác thực Token trong class JwtUtils (src/main/java/com.example.demo/utils/JwtUtils)
         ** Tạo Filter để lấy token từ header, kiểm tra token có hợp lệ hay không, nếu hợp lệ thì lấy thông tin user từ token và đưa lên SecurityContextHolder (src/main/java/com.example.demo/security/JwtAuthenticationFilter)
+    - Upload File lên server (src/main/java/com.example.demo/controller/FileController, application.properties, ResourceWebConfig, FileUploadService, FileUploadServiceImpl)
+      + Dùng thư viện tika-core để lấy đuôi file, MIME type, check các yêu cầu khi nhập file 
+      + Tạo Service để xử lý nhập file, lưu file lên server (src/main/java/com.example.demo/service/FileIploadService)
+      + Tạo API để upload file lên server (src/main/java/com.example.demo/controller/FileController)
+      + Tạo ResourceWebConfig để định nghĩa path tĩnh rồi đọc file từ folder tĩnh đó từ http (src/main/java/com.example.demo/config/ResourceWebConfig)
+      + Cho phép không cần Auth ở các path tĩnh (src/main/java/com.example.demo/security/CustomerFilterSecurity)

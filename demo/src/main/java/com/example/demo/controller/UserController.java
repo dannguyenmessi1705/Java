@@ -39,8 +39,15 @@ public class UserController {
     // (đường dẫn cuối cùng là /user/getAllUser)
     public ResponseEntity<?> getAllUser() {
         ResponseData payload = new ResponseData();
-        payload.setData(loginServiceImpl.getAllUser());
-        return new ResponseEntity<>(payload, HttpStatus.OK); // Trả về dữ liệu dạng JSON
+        try{
+            payload.setData(loginServiceImpl.getAllUser());
+            return new ResponseEntity<>(payload, HttpStatus.OK); // Trả về dữ liệu dạng JSON
+        }catch (Exception e){
+            payload.setSuccess(false);
+            payload.setStatusCode(500);
+            payload.setDescription("Server Error");
+            return new ResponseEntity<>(payload, HttpStatus.SERVICE_UNAVAILABLE);
+        }
     }
 
     @GetMapping("/add") // Đăng ký đường dẫn cho phương thức này là GET, có endpoint là /add (đường dẫn
