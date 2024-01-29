@@ -21,15 +21,15 @@ public class FileController {
         this.fileUpload = fileUpload;
     }
     @PostMapping("/upload")
-    public ResponseEntity<?> uploadFile(
-            @RequestParam(name = "file", required = false) MultipartFile file,
-            @RequestParam("fullName") String fullName,
-            @RequestParam("age") int age
+    public ResponseEntity<?> uploadFile( // Hàm này sẽ upload file lên server
+            @RequestParam(name = "file", required = false) MultipartFile file, // Tham số file sẽ được gửi từ client lên server
+            @RequestParam("fullName") String fullName, // Tham số fullName sẽ được gửi từ client lên server
+            @RequestParam("age") int age // Tham số age sẽ được gửi từ client lên server
     ){
         ResponseData payload = new ResponseData();
         Map<String, String> res = new HashMap<>();
         try{
-            String fileName = fileUpload.storeFile(file);
+            String fileName = fileUpload.storeFile(file); // Lưu file lên server
             payload.setDescription("Upload File Successful");
             res.put("fileName", fileName);
             res.put("fullName", fullName);
