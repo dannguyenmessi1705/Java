@@ -38,3 +38,6 @@ Trong project này nói về:
       + Tạo API để upload file lên server (src/main/java/com.example.demo/controller/FileController)
       + Tạo ResourceWebConfig để định nghĩa path tĩnh rồi đọc file từ folder tĩnh đó từ http (src/main/java/com.example.demo/config/ResourceWebConfig)
       + Cho phép không cần Auth ở các path tĩnh (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+      + Lưu ý: Các file tĩnh nhưng vì để trong folder src/main/resources/static nên khi upload lên server nó sẽ không truy cập được, nên ta phải restart server rồi mới truy lại được
+               Nguyên nhân là do folder src chưá các file thiết lập đầu vào
+               Để truy cập được file tĩnh, ta phải đưa folder static ra ngoài src, hoặc thiết lập 1 folder riêng bên ngoài src, sau đó thiết lập đường dẫn đến folder static đó trong application.properties, cũng như trong ResourceWebConfig
