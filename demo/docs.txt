@@ -36,6 +36,7 @@ Trong project này nói về:
       + Dùng thư viện tika-core để lấy đuôi file, MIME type, check các yêu cầu khi nhập file 
       + Tạo Service để xử lý nhập file, lưu file lên server (src/main/java/com.example.demo/service/FileIploadService)
       + Tạo API để upload file lên server (src/main/java/com.example.demo/controller/FileController)
+        Dùng @ModelAttrinute để có thể truyền file + các thông tin khác (json) lên server qua multipart/form-data
       + Tạo ResourceWebConfig để định nghĩa path tĩnh rồi đọc file từ folder tĩnh đó từ http (src/main/java/com.example.demo/config/ResourceWebConfig)
       + Cho phép không cần Auth ở các path tĩnh (src/main/java/com.example.demo/security/CustomerFilterSecurity)
       + Lưu ý: Các file tĩnh nhưng vì để trong folder src/main/resources/static nên khi upload lên server nó sẽ không truy cập được, nên ta phải restart server rồi mới truy lại được
