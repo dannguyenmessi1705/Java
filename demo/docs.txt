@@ -42,3 +42,15 @@ Trong project này nói về:
       + Lưu ý: Các file tĩnh nhưng vì để trong folder src/main/resources/static nên khi upload lên server nó sẽ không truy cập được, nên ta phải restart server rồi mới truy lại được
                Nguyên nhân là do folder src chưá các file thiết lập đầu vào
                Để truy cập được file tĩnh, ta phải đưa folder static ra ngoài src, hoặc thiết lập 1 folder riêng bên ngoài src, sau đó thiết lập đường dẫn đến folder static đó trong application.properties, cũng như trong ResourceWebConfig
+
+    - Sử dụng SocketIO (netty-socketio) để tương tác realtime.
+      + Thêm thư viện của netty-socketio (pom.xml)
+      + Thêm cấu hình port và host cho SocketIO (application.properties)
+      + Tạo class SocketIOConfig và ServerCommandLineRunner để cấu hình SocketIO (src/main/java/com.example.demo/config)
+        ** class SocketIOConfig để cấu hình SocketIO (src/main/java/com.example.demo/config/SocketIOConfig)
+        ** class ServerCommandLineRunner để chạy SocketIO khi server chạy (src/main/java/com.example.demo/config/ServerCommandLineRunner)
+      + Tạo entity UserChat, Room, Chat và các Service để làm việc với database (src/main/java/com.example.demo/entity/UserChat, src/main/java/com.example.demo/service/UserChatService)
+      + Tạo class SocketModule và SocketService để tạo các event và listener (src/main/java/com.example.demo/socket/SocketModule, src/main/java/com.example.demo/socket/SocketService)
+        ** class SocketModule để tạo các event và listener (src/main/java/com.example.demo/socket/SocketModule)
+        ** class SocketService để xử lý các event và listener (src/main/java/com.example.demo/socket/SocketService)
+      + Tạo controller UserChatController, Room, Chat để tạo API (src/main/java/com.example.demo/controller/UserChatController)

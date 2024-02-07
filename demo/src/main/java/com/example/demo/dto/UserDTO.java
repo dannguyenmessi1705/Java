@@ -4,6 +4,7 @@ package com.example.demo.dto;
 // và dữ liệu bao gồm các trường được liệt kê ở dưới
 
 import java.util.Date;
+import com.example.demo.dto.RoleDTO;
 
 public class UserDTO {
     private int id;

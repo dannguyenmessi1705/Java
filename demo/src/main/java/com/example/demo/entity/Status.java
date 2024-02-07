@@ -1,2 +1,5 @@
-package com.example.demo.entity;public enum Status {
+package com.example.demo.entity;
+
+public enum Status {
+    ONLINE, OFFLINE;
 }
