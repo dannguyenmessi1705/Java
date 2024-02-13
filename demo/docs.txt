@@ -54,3 +54,24 @@ Trong project này nói về:
         ** class SocketModule để tạo các event và listener (src/main/java/com.example.demo/socket/SocketModule)
         ** class SocketService để xử lý các event và listener (src/main/java/com.example.demo/socket/SocketService)
       + Tạo controller UserChatController, Room, Chat để tạo API (src/main/java/com.example.demo/controller/UserChatController)
+
+    - Sử dụng logger để log ra các thông tin của server chạy (trace<debug<info<warn<error) là thứ tự có thể log ra các thông tin
+        + Thêm thư viện log4j vào pom.xml
+        + Ví dụ dùng logger.trace sẽ log ra đc cả logger.error, còn ngược lại thì không
+        + Mặc định nó sẽ lắng nghe logger ở lớp info, để cho nó về lớp trace to nhất thì thay đổi logging.level.root={loại log} ở application.properties
+        + Để log ra file thì thêm logging.file={đường dẫn file} ở application.properties (classpath:logs/app.log)
+        + Tạo file cấu hình logback-spring.xml để cấu hình logger thay vì cấu hình trong application.properties (src/main/resources/logback-spring.xml)
+        + Các định dạng của logger:
+            ** %d{yyyy-MM-dd HH:mm:ss.SSS} : thời gian log
+            ** ${PID} : process id
+            ** $-5level : In ra tất cả các log có level từ trace đến error
+            ** %5p : loại log (trace, debug, info, warn, error)
+            ** %logger{36} : tên class log (36 ký tự) 
+            ** %t : thread
+            ** %c : class
+            ** %M : method
+            ** %L : line
+            ** %msg : message chính
+            ** %n : xuống dòng
+            ** %ex : log ra exception
+          VD: %d{yyyy-MM-dd HH:mm:ss.SSS} ${PID:-} $-5level %logger{36} %t %c %M %L %msg %n %ex

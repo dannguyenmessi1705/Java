@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.DemoApplication;
 import com.example.demo.dto.RoleDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.entity.Roles;
@@ -14,6 +15,8 @@ import java.util.List;
 import java.util.UUID;
 
 import com.example.demo.service.impl.LoginServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +29,9 @@ public class UserLoginService implements LoginServiceImpl {
     private final RoleRepository roleRepository; // Khai báo biến roleRepository để tiêm vào đây
     private final PasswordEncoder passwordEncoder; // Khai báo biến passwordEncoder để tiêm vào đây
 
+    // Logger
+    private static Logger logger = LoggerFactory.getLogger(UserLoginService.class); // Khai báo biến logger để ghi log (ghi ra màn hình console) và hiển thị thông tin của class đang ghi log
+
     @Autowired // Tiêm UserRepository vào đây (tự động tìm kiếm và tiêm)
     public UserLoginService(UserRepository userRepository, RoleRepository roleRepository,
             PasswordEncoder passwordEncoder) { // Khởi tạo đối tượng UserLoginService
@@ -36,6 +42,11 @@ public class UserLoginService implements LoginServiceImpl {
 
     @Override
     public List<UserDTO> getAllUser() {
+        logger.trace("Run app"); // Ghi log với mức độ trace 
+        logger.debug("Run app"); // Ghi log với mức độ debug (thông tin debug)
+        logger.info("Run app"); // Ghi log với mức độ info (thông tin thông thường)
+        logger.warn("Run app"); // Ghi log với mức độ warn (cảnh báo)
+        logger.error("Run app"); // Ghi log với mức độ error (lỗi)
         List<Users> users = userRepository.findAll(); // Lấy tất cả dữ liệu từ bảng users trong database
         List<UserDTO> userDTOs = new ArrayList<>(); // Khởi tạo 1 List rỗng để chứa dữ liệu sau khi chuyển đổi
         for (Users user : users) {

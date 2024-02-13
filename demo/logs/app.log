@@ -1,0 +1,172 @@
+2024-02-13 [restartedMain] INFO  19680 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 19680 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
+2024-02-13 [restartedMain] INFO  19680 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
+2024-02-13 [restartedMain] INFO  19680 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-13 [restartedMain] INFO  19680 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-13 [restartedMain] INFO  19680 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-13 [restartedMain] INFO  19680 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2024-02-13 [restartedMain] INFO  19680 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
+2024-02-13 [restartedMain] INFO  19680 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
+2024-02-13 [restartedMain] INFO  19680 o.a.catalina.core.StandardService : Starting service [Tomcat]
+2024-02-13 [restartedMain] INFO  19680 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-13 [restartedMain] INFO  19680 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2024-02-13 [restartedMain] INFO  19680 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1238 ms
+2024-02-13 [restartedMain] INFO  19680 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-13 [restartedMain] INFO  19680 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-13 [restartedMain] INFO  19680 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-02-13 [restartedMain] INFO  19680 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-13 [restartedMain] INFO  19680 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-02-13 [restartedMain] INFO  19680 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32c0cd4d
+2024-02-13 [restartedMain] INFO  19680 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-02-13 [restartedMain] WARN  19680 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-13 [restartedMain] WARN  19680 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-13 [restartedMain] WARN  19680 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
+2024-02-13 [restartedMain] WARN  19680 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
+2024-02-13 [restartedMain] WARN  19680 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
+2024-02-13 [restartedMain] WARN  19680 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
+2024-02-13 [restartedMain] INFO  19680 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-13 [restartedMain] INFO  19680 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-13 [restartedMain] WARN  19680 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-13 [restartedMain] INFO  19680 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62cb3ba4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bdb7e31, org.springframework.security.web.context.SecurityContextHolderFilter@793c8233, org.springframework.security.web.header.HeaderWriterFilter@450c5ac7, org.springframework.security.web.authentication.logout.LogoutFilter@5ae8abc7, com.example.demo.security.JwtAuthenticationFilter@48d1d8f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53bbc08a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@626b5806, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e69c4c8, org.springframework.security.web.session.SessionManagementFilter@187eb254, org.springframework.security.web.access.ExceptionTranslationFilter@5ec9c090, org.springframework.security.web.access.intercept.AuthorizationFilter@601d208c]
+2024-02-13 [restartedMain] INFO  19680 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2024-02-13 [restartedMain] INFO  19680 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
+2024-02-13 [restartedMain] INFO  19680 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
+2024-02-13 [restartedMain] INFO  19680 com.example.demo.DemoApplication : Started DemoApplication in 4.335 seconds (process running for 4.7)
+2024-02-13 [restartedMain] INFO  19680 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+2024-02-13 [nioEventLoopGroup-2-1] INFO  19680 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
+2024-02-13 [http-nio-8989-exec-1] INFO  19680 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-13 [http-nio-8989-exec-1] INFO  19680 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2024-02-13 [http-nio-8989-exec-1] INFO  19680 o.s.web.servlet.DispatcherServlet : Completed initialization in 2 ms
+2024-02-13 [http-nio-8989-exec-1] INFO  19680 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  19680 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 19680 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [SpringApplicationShutdownHook] INFO  19680 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-13 [SpringApplicationShutdownHook] INFO  19680 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-02-13 [SpringApplicationShutdownHook] INFO  19680 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-02-13 [restartedMain] INFO  13888 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 13888 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
+2024-02-13 [restartedMain] INFO  13888 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
+2024-02-13 [restartedMain] INFO  13888 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-13 [restartedMain] INFO  13888 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-13 [restartedMain] INFO  13888 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-13 [restartedMain] INFO  13888 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2024-02-13 [restartedMain] INFO  13888 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
+2024-02-13 [restartedMain] INFO  13888 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
+2024-02-13 [restartedMain] INFO  13888 o.a.catalina.core.StandardService : Starting service [Tomcat]
+2024-02-13 [restartedMain] INFO  13888 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-13 [restartedMain] INFO  13888 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2024-02-13 [restartedMain] INFO  13888 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1127 ms
+2024-02-13 [restartedMain] INFO  13888 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-13 [restartedMain] INFO  13888 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-13 [restartedMain] INFO  13888 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-02-13 [restartedMain] INFO  13888 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-13 [restartedMain] INFO  13888 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-02-13 [restartedMain] INFO  13888 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@432b697
+2024-02-13 [restartedMain] INFO  13888 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-02-13 [restartedMain] WARN  13888 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-13 [restartedMain] WARN  13888 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-13 [restartedMain] WARN  13888 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
+2024-02-13 [restartedMain] WARN  13888 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
+2024-02-13 [restartedMain] WARN  13888 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
+2024-02-13 [restartedMain] WARN  13888 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
+2024-02-13 [restartedMain] INFO  13888 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-13 [restartedMain] INFO  13888 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-13 [restartedMain] WARN  13888 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-13 [restartedMain] INFO  13888 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6203d9a5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5392184e, org.springframework.security.web.context.SecurityContextHolderFilter@7b65940c, org.springframework.security.web.header.HeaderWriterFilter@543e69bf, org.springframework.security.web.authentication.logout.LogoutFilter@17fcc91b, com.example.demo.security.JwtAuthenticationFilter@49f63de0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e652629, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a1d2e24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@669c414, org.springframework.security.web.session.SessionManagementFilter@478edd2d, org.springframework.security.web.access.ExceptionTranslationFilter@6a08d59c, org.springframework.security.web.access.intercept.AuthorizationFilter@434e5dc6]
+2024-02-13 [restartedMain] INFO  13888 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2024-02-13 [restartedMain] INFO  13888 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
+2024-02-13 [restartedMain] INFO  13888 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
+2024-02-13 [restartedMain] INFO  13888 com.example.demo.DemoApplication : Started DemoApplication in 4.176 seconds (process running for 4.55)
+2024-02-13 [restartedMain] INFO  13888 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+2024-02-13 [nioEventLoopGroup-2-1] INFO  13888 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 o.s.web.servlet.DispatcherServlet : Completed initialization in 0 ms
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-4] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-9] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-9] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-9] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-9] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-9] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-9] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-1] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-2] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-6] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] INFO  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] WARN  13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [http-nio-8989-exec-8] ERROR 13888 c.e.demo.service.UserLoginService : Run app
+2024-02-13 [SpringApplicationShutdownHook] INFO  13888 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-13 [SpringApplicationShutdownHook] INFO  13888 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-02-13 [SpringApplicationShutdownHook] INFO  13888 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
