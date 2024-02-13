@@ -75,3 +75,20 @@ Trong project này nói về:
             ** %n : xuống dòng
             ** %ex : log ra exception
           VD: %d{yyyy-MM-dd HH:mm:ss.SSS} ${PID:-} $-5level %logger{36} %t %c %M %L %msg %n %ex
+
+    - Sử dụng Redis để lưu cache
+        + Thêm thư viện của Redis (pom.xml) (spring-boot-starter-data-redis, redis.clients, io.lettuce.core)
+        + Tạo class RedisConfig để cấu hình Redis (src/main/java/com.example.demo/config/RedisConfig)
+          ** Cấu hình kết nối đến Redis
+          ** Cấu hình RedisTemplate để lưu cache (src/main/java/com.example.demo/config/RedisConfig)
+            <String, Object> : key, value (có thể là object, list, set, ...)
+            Object sẽ được convert sang JSON rồi lưu vào Redis như 1 String
+            Dùng thư viện Gson để convert Object sang JSON
+        + Ví dụ lưu cache ở API UserLoginService (src/main/java/com.example.demo/service/UserLoginService)
+        + Các phương thức của RedisTemplate:
+            ** opsForValue() : lưu cache dạng key-value (String, Object) Nên dùng vì tương thích với nhiều kiểu dữ liệu
+            ** opsForList() : lưu cache dạng list
+            ** opsForSet() : lưu cache dạng set
+            ** opsForHash() : lưu cache dạng hash
+            ** opsForZSet() : lưu cache dạng zset
+            ** opsForGeo() : lưu cache dạng geo

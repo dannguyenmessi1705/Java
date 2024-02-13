@@ -45,7 +45,7 @@ public class UserController {
         }catch (Exception e){
             payload.setSuccess(false);
             payload.setStatusCode(500);
-            payload.setDescription("Server Error");
+            payload.setDescription(e.getMessage());
             return new ResponseEntity<>(payload, HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
