@@ -40,7 +40,7 @@ public class CustomFilterSecurity {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         ); // Tắt Session
         http.authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/**", "/images/**", "/user/getAllUser")
+                        .requestMatchers("/auth/**", "/images/**", "/user/getAllUser", "/api-docs**/**", "swagger-ui/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated()
