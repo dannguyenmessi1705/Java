@@ -1,0 +1,94 @@
+Trong project này nói về:
+    - Tạo và đăng ký route (src/main/java/com.example.demo/controller)
+    - Thêm RequestBody vào khi gọi API (src/main/java/com.example.demo/controller), (src/main/java/com.example.demo/model)
+    - ORM Map với Database (src/main/java/com.example.demo/entity)
+    - Kết nối với Database MYSQL (src/main/resources/application.properties)
+    - Sư dụng JPA để thao tác với Database (src/main/java/com.example.demo/repository)
+        + Tạo interface kế thừa JpaRepository (JpaRepository<entity, id> trong đó entity là class entity, id là kiểu dữ liệu của id trong entity)
+        + Tạo class implement interface trên 
+        + Dùng các annotation như 
+            @Bean (khai báo dùng để đánh dấu method là Bean), 
+            @Component (khai báo dùng để đánh dấu class là Bean), 
+            @Service (khai báo dùng để xử lý logic), 
+            @Repository(khai báo dùng để query với Database) 
+          để đăng ký Bean trong Spring Container, đưa lên IOC Container để quản lý, khi có yêu cầu sẽ từ IOC eject ra các class và sử dụng
+        + Sử dụng @Autowired để inject Bean vào trong class (src/main/java/com.example.demo/controller), có thể dùng @Qualifier để chỉ định Bean cần inject
+    - Sử dụng kỹ thuật DTO (Data Transfer Object) để truyền dữ liệu sang JSON (src/main/java/com.example.demo/dto, controller)
+    Do trong entity có thể có những trường không cần thiết trả về cho client, nên ta tạo ra một class DTO để trả về cho client, class này chỉ có những trường cần thiết
+    - Tạo các Custom JPA query (find(Count)(First, Top10)By(Username)(OrderBy)(Asc), findAllBy, ...) (src/main/java/com.example.demo/repository)
+    - Tạo Implement để loại bỏ Dependency (src/main/java/com.example.demo/service/impl). Khi gọi hàm chỉ cần gọi interface, nó sẽ tự động gọi đến class implement interface đó
+    - Tạo Payload để trả về cho client hoặc để client request lên server (src/main/java/com.example.demo/payload)
+    - Tạo API đăng ký tài khoản (src/main/java/com.example.demo/controller) (src/main/java/com.example.demo/payload/request/SignUpRequest) (src/main/java/com.example.demo/service/impl/LoginServiceImpl) (src/main/java/com.example.demo/security/service/UserLoginService)
+    - Dùng Spring Security để bảo vệ route, phân quyền (src/main/java/com.example.demo/security)
+      + Custom FilterSecurity để bảo vệ route (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+      + Dùng Bcrypt để mã hóa password (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+      + SingIn và SignUp theo chuẩn mã hóa password Bcrypt (src/main/java/com.example.demo/service/UserLoginService)
+      + Theo chuẩn BasicAuth (không cần dùng trang login, chỉ cần gửi username và password lên server để xác thực)
+        ** Tạo UserDetailService mặc định đưa lên Memory theo BasicAuth (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+        ** Custom lại UserDetailService để lấy thông tin user từ Database (src/main/java/com.example.demo/security/CustomerFilterSecurity), (src/main/java/com.example.demo/security/service/CustomUserDetailService)
+      + Dùng JWT để xác thực
+        ** Viết đoạn code tạo 1 SecretKey rồi thêm vào application.properties, sau khi tạo xong, xóa code (src/main/java/com.example.demo/controller/AuthController)
+        ** Tạo class JwtUtils để tạo JWT cho mỗi lần SignIn, trả về token (src/main/java/com.example.demo/utils/JwtUtils)
+        ** Tắt Session trong Spring Security và HttpBasic (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+        ** Thêm hàm giải mã token và xác thực Token trong class JwtUtils (src/main/java/com.example.demo/utils/JwtUtils)
+        ** Tạo Filter để lấy token từ header, kiểm tra token có hợp lệ hay không, nếu hợp lệ thì lấy thông tin user từ token và đưa lên SecurityContextHolder (src/main/java/com.example.demo/security/JwtAuthenticationFilter)
+    - Upload File lên server (src/main/java/com.example.demo/controller/FileController, application.properties, ResourceWebConfig, FileUploadService, FileUploadServiceImpl)
+      + Dùng thư viện tika-core để lấy đuôi file, MIME type, check các yêu cầu khi nhập file 
+      + Tạo Service để xử lý nhập file, lưu file lên server (src/main/java/com.example.demo/service/FileIploadService)
+      + Tạo API để upload file lên server (src/main/java/com.example.demo/controller/FileController)
+        Dùng @ModelAttrinute để có thể truyền file + các thông tin khác (json) lên server qua multipart/form-data
+      + Tạo ResourceWebConfig để định nghĩa path tĩnh rồi đọc file từ folder tĩnh đó từ http (src/main/java/com.example.demo/config/ResourceWebConfig)
+      + Cho phép không cần Auth ở các path tĩnh (src/main/java/com.example.demo/security/CustomerFilterSecurity)
+      + Lưu ý: Các file tĩnh nhưng vì để trong folder src/main/resources/static nên khi upload lên server nó sẽ không truy cập được, nên ta phải restart server rồi mới truy lại được
+               Nguyên nhân là do folder src chưá các file thiết lập đầu vào
+               Để truy cập được file tĩnh, ta phải đưa folder static ra ngoài src, hoặc thiết lập 1 folder riêng bên ngoài src, sau đó thiết lập đường dẫn đến folder static đó trong application.properties, cũng như trong ResourceWebConfig
+
+    - Sử dụng SocketIO (netty-socketio) để tương tác realtime.
+      + Thêm thư viện của netty-socketio (pom.xml)
+      + Thêm cấu hình port và host cho SocketIO (application.properties)
+      + Tạo class SocketIOConfig và ServerCommandLineRunner để cấu hình SocketIO (src/main/java/com.example.demo/config)
+        ** class SocketIOConfig để cấu hình SocketIO (src/main/java/com.example.demo/config/SocketIOConfig)
+        ** class ServerCommandLineRunner để chạy SocketIO khi server chạy (src/main/java/com.example.demo/config/ServerCommandLineRunner)
+      + Tạo entity UserChat, Room, Chat và các Service để làm việc với database (src/main/java/com.example.demo/entity/UserChat, src/main/java/com.example.demo/service/UserChatService)
+      + Tạo class SocketModule và SocketService để tạo các event và listener (src/main/java/com.example.demo/socket/SocketModule, src/main/java/com.example.demo/socket/SocketService)
+        ** class SocketModule để tạo các event và listener (src/main/java/com.example.demo/socket/SocketModule)
+        ** class SocketService để xử lý các event và listener (src/main/java/com.example.demo/socket/SocketService)
+      + Tạo controller UserChatController, Room, Chat để tạo API (src/main/java/com.example.demo/controller/UserChatController)
+
+    - Sử dụng logger để log ra các thông tin của server chạy (trace<debug<info<warn<error) là thứ tự có thể log ra các thông tin
+        + Thêm thư viện log4j vào pom.xml
+        + Ví dụ dùng logger.trace sẽ log ra đc cả logger.error, còn ngược lại thì không
+        + Mặc định nó sẽ lắng nghe logger ở lớp info, để cho nó về lớp trace to nhất thì thay đổi logging.level.root={loại log} ở application.properties
+        + Để log ra file thì thêm logging.file={đường dẫn file} ở application.properties (classpath:logs/app.log)
+        + Tạo file cấu hình logback-spring.xml để cấu hình logger thay vì cấu hình trong application.properties (src/main/resources/logback-spring.xml)
+        + Các định dạng của logger:
+            ** %d{yyyy-MM-dd HH:mm:ss.SSS} : thời gian log
+            ** ${PID} : process id
+            ** $-5level : In ra tất cả các log có level từ trace đến error
+            ** %5p : loại log (trace, debug, info, warn, error)
+            ** %logger{36} : tên class log (36 ký tự) 
+            ** %t : thread
+            ** %c : class
+            ** %M : method
+            ** %L : line
+            ** %msg : message chính
+            ** %n : xuống dòng
+            ** %ex : log ra exception
+          VD: %d{yyyy-MM-dd HH:mm:ss.SSS} ${PID:-} $-5level %logger{36} %t %c %M %L %msg %n %ex
+
+    - Sử dụng Redis để lưu cache
+        + Thêm thư viện của Redis (pom.xml) (spring-boot-starter-data-redis, redis.clients, io.lettuce.core)
+        + Tạo class RedisConfig để cấu hình Redis (src/main/java/com.example.demo/config/RedisConfig)
+          ** Cấu hình kết nối đến Redis
+          ** Cấu hình RedisTemplate để lưu cache (src/main/java/com.example.demo/config/RedisConfig)
+            <String, Object> : key, value (có thể là object, list, set, ...)
+            Object sẽ được convert sang JSON rồi lưu vào Redis như 1 String
+            Dùng thư viện Gson để convert Object sang JSON
+        + Ví dụ lưu cache ở API UserLoginService (src/main/java/com.example.demo/service/UserLoginService)
+        + Các phương thức của RedisTemplate:
+            ** opsForValue() : lưu cache dạng key-value (String, Object) Nên dùng vì tương thích với nhiều kiểu dữ liệu
+            ** opsForList() : lưu cache dạng list
+            ** opsForSet() : lưu cache dạng set
+            ** opsForHash() : lưu cache dạng hash
+            ** opsForZSet() : lưu cache dạng zset
+            ** opsForGeo() : lưu cache dạng geo

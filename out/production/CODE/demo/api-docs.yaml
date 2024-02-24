@@ -1,0 +1,244 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8989
+  description: Generated server url
+paths:
+  /user/create:
+    post:
+      tags:
+      - user-controller
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /user/createMulti:
+    post:
+      tags:
+      - user-controller
+      operationId: createMulti
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /upload:
+    post:
+      tags:
+      - file-controller
+      operationId: uploadFile
+      parameters:
+      - name: fullName
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: age
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /auth/signup:
+    post:
+      tags:
+      - auth-controller
+      operationId: signUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignupRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /auth/signin:
+    post:
+      tags:
+      - auth-controller
+      operationId: signIn
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /user/getOne:
+    get:
+      tags:
+      - user-controller
+      operationId: getOne
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /user/getOne404:
+    get:
+      tags:
+      - user-controller
+      operationId: getOne404
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /user/getDetail/{username}/{id}:
+    get:
+      tags:
+      - user-controller
+      operationId: getDetail
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /user/getAllUser:
+    get:
+      tags:
+      - user-controller
+      operationId: getAllUser
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /user/add:
+    get:
+      tags:
+      - user-controller
+      operationId: add
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /user/addUser:
+    get:
+      tags:
+      - user-controller
+      operationId: addUser
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        age:
+          type: integer
+          format: int32
+    SignupRequest:
+      type: object
+      properties:
+        fullName:
+          type: string
+        age:
+          type: integer
+          format: int32
+        username:
+          type: string
+        password:
+          type: string
+        role_id:
+          type: integer
+          format: int32
