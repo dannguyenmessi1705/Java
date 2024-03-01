@@ -1,300 +1,186 @@
-2024-02-14 [restartedMain] INFO  2932 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 2932 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
-2024-02-14 [restartedMain] INFO  2932 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
-2024-02-14 [restartedMain] INFO  2932 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-02-14 [restartedMain] INFO  2932 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 3 JPA repository interfaces.
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  2932 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2024-02-14 [restartedMain] INFO  2932 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
-2024-02-14 [restartedMain] INFO  2932 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  2932 o.a.catalina.core.StandardService : Starting service [Tomcat]
-2024-02-14 [restartedMain] INFO  2932 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-02-14 [restartedMain] INFO  2932 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
-2024-02-14 [restartedMain] INFO  2932 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1600 ms
-2024-02-14 [restartedMain] INFO  2932 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-14 [restartedMain] INFO  2932 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-14 [restartedMain] INFO  2932 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
-2024-02-14 [restartedMain] INFO  2932 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-14 [restartedMain] INFO  2932 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
-2024-02-14 [restartedMain] INFO  2932 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27f04298
-2024-02-14 [restartedMain] INFO  2932 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
-2024-02-14 [restartedMain] WARN  2932 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-14 [restartedMain] WARN  2932 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-02-14 [restartedMain] WARN  2932 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  2932 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  2932 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] WARN  2932 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] INFO  2932 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-14 [restartedMain] INFO  2932 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [restartedMain] WARN  2932 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-14 [restartedMain] INFO  2932 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ee89f6b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fd841f0, org.springframework.security.web.context.SecurityContextHolderFilter@5f53cadc, org.springframework.security.web.header.HeaderWriterFilter@87fa4b8, org.springframework.security.web.authentication.logout.LogoutFilter@62a22bcb, com.example.demo.security.JwtAuthenticationFilter@6e2fce2f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38fcb8ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27003b2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@548e00b9, org.springframework.security.web.session.SessionManagementFilter@7503741d, org.springframework.security.web.access.ExceptionTranslationFilter@4574ea8d, org.springframework.security.web.access.intercept.AuthorizationFilter@c02e28]
-2024-02-14 [restartedMain] INFO  2932 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
-2024-02-14 [restartedMain] INFO  2932 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  2932 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
-2024-02-14 [restartedMain] INFO  2932 com.example.demo.DemoApplication : Started DemoApplication in 5.225 seconds (process running for 5.629)
-2024-02-14 [restartedMain] INFO  2932 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-2024-02-14 [nioEventLoopGroup-4-1] INFO  2932 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
-2024-02-14 [http-nio-8989-exec-1] INFO  2932 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  2932 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  2932 o.s.web.servlet.DispatcherServlet : Completed initialization in 0 ms
-2024-02-14 [http-nio-8989-exec-1] INFO  2932 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-1] WARN  2932 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-1] ERROR 2932 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-5] INFO  2932 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-5] WARN  2932 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-5] ERROR 2932 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [SpringApplicationShutdownHook] INFO  2932 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [SpringApplicationShutdownHook] INFO  2932 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
-2024-02-14 [SpringApplicationShutdownHook] INFO  2932 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
-2024-02-14 [restartedMain] INFO  5544 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 5544 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
-2024-02-14 [restartedMain] INFO  5544 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
-2024-02-14 [restartedMain] INFO  5544 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-02-14 [restartedMain] INFO  5544 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 3 JPA repository interfaces.
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  5544 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2024-02-14 [restartedMain] INFO  5544 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
-2024-02-14 [restartedMain] INFO  5544 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  5544 o.a.catalina.core.StandardService : Starting service [Tomcat]
-2024-02-14 [restartedMain] INFO  5544 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-02-14 [restartedMain] INFO  5544 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
-2024-02-14 [restartedMain] INFO  5544 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1426 ms
-2024-02-14 [restartedMain] INFO  5544 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-14 [restartedMain] INFO  5544 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-14 [restartedMain] INFO  5544 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
-2024-02-14 [restartedMain] INFO  5544 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-14 [restartedMain] INFO  5544 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
-2024-02-14 [restartedMain] INFO  5544 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@327a83f6
-2024-02-14 [restartedMain] INFO  5544 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
-2024-02-14 [restartedMain] WARN  5544 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-14 [restartedMain] WARN  5544 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-02-14 [restartedMain] WARN  5544 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  5544 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  5544 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] WARN  5544 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] INFO  5544 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-14 [restartedMain] INFO  5544 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [restartedMain] WARN  5544 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-14 [restartedMain] INFO  5544 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@208cf1af, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e8c4d49, org.springframework.security.web.context.SecurityContextHolderFilter@3e67ed0d, org.springframework.security.web.header.HeaderWriterFilter@5d6b635d, org.springframework.security.web.authentication.logout.LogoutFilter@121c8e0d, com.example.demo.security.JwtAuthenticationFilter@78a0905b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a61c2e3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@af7b89c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2daf4057, org.springframework.security.web.session.SessionManagementFilter@7278922b, org.springframework.security.web.access.ExceptionTranslationFilter@602e9ddf, org.springframework.security.web.access.intercept.AuthorizationFilter@d2a7e81]
-2024-02-14 [restartedMain] INFO  5544 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
-2024-02-14 [restartedMain] INFO  5544 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  5544 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
-2024-02-14 [restartedMain] INFO  5544 com.example.demo.DemoApplication : Started DemoApplication in 4.616 seconds (process running for 4.977)
-2024-02-14 [restartedMain] INFO  5544 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-2024-02-14 [nioEventLoopGroup-4-1] INFO  5544 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
-2024-02-14 [http-nio-8989-exec-1] INFO  5544 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  5544 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  5544 o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms
-2024-02-14 [SpringApplicationShutdownHook] INFO  5544 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [SpringApplicationShutdownHook] INFO  5544 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
-2024-02-14 [SpringApplicationShutdownHook] INFO  5544 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
-2024-02-14 [restartedMain] INFO  14748 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 14748 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
-2024-02-14 [restartedMain] INFO  14748 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
-2024-02-14 [restartedMain] INFO  14748 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-02-14 [restartedMain] INFO  14748 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 3 JPA repository interfaces.
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  14748 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-2024-02-14 [restartedMain] INFO  14748 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
-2024-02-14 [restartedMain] INFO  14748 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  14748 o.a.catalina.core.StandardService : Starting service [Tomcat]
-2024-02-14 [restartedMain] INFO  14748 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-02-14 [restartedMain] INFO  14748 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
-2024-02-14 [restartedMain] INFO  14748 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1479 ms
-2024-02-14 [restartedMain] INFO  14748 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-14 [restartedMain] INFO  14748 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-14 [restartedMain] INFO  14748 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
-2024-02-14 [restartedMain] INFO  14748 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-14 [restartedMain] INFO  14748 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
-2024-02-14 [restartedMain] INFO  14748 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@318bde9c
-2024-02-14 [restartedMain] INFO  14748 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
-2024-02-14 [restartedMain] WARN  14748 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-14 [restartedMain] WARN  14748 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-02-14 [restartedMain] WARN  14748 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  14748 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  14748 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] WARN  14748 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] INFO  14748 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-14 [restartedMain] INFO  14748 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [restartedMain] WARN  14748 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-14 [restartedMain] INFO  14748 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@211994c9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6578f7d8, org.springframework.security.web.context.SecurityContextHolderFilter@2b744570, org.springframework.security.web.header.HeaderWriterFilter@12ad99d6, org.springframework.security.web.authentication.logout.LogoutFilter@1b9bf776, com.example.demo.security.JwtAuthenticationFilter@33755100, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3300b4e5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c52ae2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@187ea4fb, org.springframework.security.web.session.SessionManagementFilter@2daed6e3, org.springframework.security.web.access.ExceptionTranslationFilter@3a184dfc, org.springframework.security.web.access.intercept.AuthorizationFilter@56b242f0]
-2024-02-14 [restartedMain] INFO  14748 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
-2024-02-14 [restartedMain] INFO  14748 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  14748 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
-2024-02-14 [restartedMain] INFO  14748 com.example.demo.DemoApplication : Started DemoApplication in 4.73 seconds (process running for 5.098)
-2024-02-14 [restartedMain] INFO  14748 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-2024-02-14 [nioEventLoopGroup-4-1] INFO  14748 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
-2024-02-14 [http-nio-8989-exec-1] INFO  14748 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  14748 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  14748 o.s.web.servlet.DispatcherServlet : Completed initialization in 2 ms
-2024-02-14 [http-nio-8989-exec-1] INFO  14748 o.s.api.AbstractOpenApiResource : Init duration for springdoc-openapi is: 208 ms
-2024-02-14 [SpringApplicationShutdownHook] INFO  14748 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [SpringApplicationShutdownHook] INFO  14748 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
-2024-02-14 [SpringApplicationShutdownHook] INFO  14748 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
-2024-02-14 [restartedMain] INFO  5560 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 5560 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
-2024-02-14 [restartedMain] INFO  5560 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
-2024-02-14 [restartedMain] INFO  5560 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-02-14 [restartedMain] INFO  5560 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 3 JPA repository interfaces.
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  5560 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2024-02-14 [restartedMain] INFO  5560 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
-2024-02-14 [restartedMain] INFO  5560 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  5560 o.a.catalina.core.StandardService : Starting service [Tomcat]
-2024-02-14 [restartedMain] INFO  5560 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-02-14 [restartedMain] INFO  5560 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
-2024-02-14 [restartedMain] INFO  5560 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1535 ms
-2024-02-14 [restartedMain] INFO  5560 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-14 [restartedMain] INFO  5560 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-14 [restartedMain] INFO  5560 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
-2024-02-14 [restartedMain] INFO  5560 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-14 [restartedMain] INFO  5560 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
-2024-02-14 [restartedMain] INFO  5560 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@807fe02
-2024-02-14 [restartedMain] INFO  5560 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
-2024-02-14 [restartedMain] WARN  5560 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-14 [restartedMain] WARN  5560 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-02-14 [restartedMain] WARN  5560 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  5560 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  5560 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] WARN  5560 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] INFO  5560 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-14 [restartedMain] INFO  5560 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [restartedMain] WARN  5560 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-14 [restartedMain] INFO  5560 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67dcda1a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d93c791, org.springframework.security.web.context.SecurityContextHolderFilter@5c3c0bc1, org.springframework.security.web.header.HeaderWriterFilter@7fb16d6e, org.springframework.security.web.authentication.logout.LogoutFilter@7c060b86, com.example.demo.security.JwtAuthenticationFilter@dbbf2ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43d26344, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5eccd43c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72e16390, org.springframework.security.web.session.SessionManagementFilter@308e2762, org.springframework.security.web.access.ExceptionTranslationFilter@301f8f04, org.springframework.security.web.access.intercept.AuthorizationFilter@5f22b4e4]
-2024-02-14 [restartedMain] INFO  5560 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
-2024-02-14 [restartedMain] INFO  5560 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  5560 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
-2024-02-14 [restartedMain] INFO  5560 com.example.demo.DemoApplication : Started DemoApplication in 4.856 seconds (process running for 5.247)
-2024-02-14 [restartedMain] INFO  5560 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-2024-02-14 [nioEventLoopGroup-4-1] INFO  5560 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
-2024-02-14 [http-nio-8989-exec-1] INFO  5560 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  5560 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  5560 o.s.web.servlet.DispatcherServlet : Completed initialization in 0 ms
-2024-02-14 [SpringApplicationShutdownHook] INFO  5560 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [SpringApplicationShutdownHook] INFO  5560 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
-2024-02-14 [SpringApplicationShutdownHook] INFO  5560 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
-2024-02-14 [restartedMain] INFO  1420 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 1420 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
-2024-02-14 [restartedMain] INFO  1420 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
-2024-02-14 [restartedMain] INFO  1420 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-02-14 [restartedMain] INFO  1420 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 3 JPA repository interfaces.
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  1420 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2024-02-14 [restartedMain] INFO  1420 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
-2024-02-14 [restartedMain] INFO  1420 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  1420 o.a.catalina.core.StandardService : Starting service [Tomcat]
-2024-02-14 [restartedMain] INFO  1420 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-02-14 [restartedMain] INFO  1420 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
-2024-02-14 [restartedMain] INFO  1420 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1445 ms
-2024-02-14 [restartedMain] INFO  1420 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-14 [restartedMain] INFO  1420 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-14 [restartedMain] INFO  1420 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
-2024-02-14 [restartedMain] INFO  1420 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-14 [restartedMain] INFO  1420 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
-2024-02-14 [restartedMain] INFO  1420 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@516ac554
-2024-02-14 [restartedMain] INFO  1420 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
-2024-02-14 [restartedMain] WARN  1420 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-14 [restartedMain] WARN  1420 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-02-14 [restartedMain] WARN  1420 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  1420 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  1420 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] WARN  1420 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] INFO  1420 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-14 [restartedMain] INFO  1420 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [restartedMain] WARN  1420 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-14 [restartedMain] INFO  1420 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1af6e745, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a4e665b, org.springframework.security.web.context.SecurityContextHolderFilter@594efddd, org.springframework.security.web.header.HeaderWriterFilter@980eb85, org.springframework.security.web.authentication.logout.LogoutFilter@4e24db3, com.example.demo.security.JwtAuthenticationFilter@70c1d866, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@620ec6e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62761d1e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d558066, org.springframework.security.web.session.SessionManagementFilter@24414f98, org.springframework.security.web.access.ExceptionTranslationFilter@68043740, org.springframework.security.web.access.intercept.AuthorizationFilter@4ffbea7a]
-2024-02-14 [restartedMain] INFO  1420 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
-2024-02-14 [restartedMain] INFO  1420 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  1420 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
-2024-02-14 [restartedMain] INFO  1420 com.example.demo.DemoApplication : Started DemoApplication in 4.623 seconds (process running for 5.007)
-2024-02-14 [restartedMain] INFO  1420 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-2024-02-14 [nioEventLoopGroup-4-1] INFO  1420 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
-2024-02-14 [http-nio-8989-exec-1] INFO  1420 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  1420 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  1420 o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms
-2024-02-14 [http-nio-8989-exec-1] INFO  1420 o.s.api.AbstractOpenApiResource : Init duration for springdoc-openapi is: 191 ms
-2024-02-14 [SpringApplicationShutdownHook] INFO  1420 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [SpringApplicationShutdownHook] INFO  1420 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
-2024-02-14 [SpringApplicationShutdownHook] INFO  1420 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
-2024-02-14 [restartedMain] INFO  3520 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 3520 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
-2024-02-14 [restartedMain] INFO  3520 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
-2024-02-14 [restartedMain] INFO  3520 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-02-14 [restartedMain] INFO  3520 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 3 JPA repository interfaces.
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2024-02-14 [restartedMain] INFO  3520 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2024-02-14 [restartedMain] INFO  3520 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
-2024-02-14 [restartedMain] INFO  3520 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  3520 o.a.catalina.core.StandardService : Starting service [Tomcat]
-2024-02-14 [restartedMain] INFO  3520 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-02-14 [restartedMain] INFO  3520 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
-2024-02-14 [restartedMain] INFO  3520 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1401 ms
-2024-02-14 [restartedMain] INFO  3520 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-14 [restartedMain] INFO  3520 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-14 [restartedMain] INFO  3520 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
-2024-02-14 [restartedMain] INFO  3520 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-14 [restartedMain] INFO  3520 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
-2024-02-14 [restartedMain] INFO  3520 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c99132d
-2024-02-14 [restartedMain] INFO  3520 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
-2024-02-14 [restartedMain] WARN  3520 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-14 [restartedMain] WARN  3520 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-02-14 [restartedMain] WARN  3520 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  3520 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
-2024-02-14 [restartedMain] WARN  3520 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] WARN  3520 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
-2024-02-14 [restartedMain] INFO  3520 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-14 [restartedMain] INFO  3520 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [restartedMain] WARN  3520 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-14 [restartedMain] INFO  3520 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16be3389, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f570945, org.springframework.security.web.context.SecurityContextHolderFilter@2d09842, org.springframework.security.web.header.HeaderWriterFilter@72751b4d, org.springframework.security.web.authentication.logout.LogoutFilter@6a84c192, com.example.demo.security.JwtAuthenticationFilter@78a66f02, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@747f7a3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21f89b2d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ff4dcf0, org.springframework.security.web.session.SessionManagementFilter@4cd96880, org.springframework.security.web.access.ExceptionTranslationFilter@1622c64a, org.springframework.security.web.access.intercept.AuthorizationFilter@b724043]
-2024-02-14 [restartedMain] INFO  3520 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
-2024-02-14 [restartedMain] INFO  3520 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
-2024-02-14 [restartedMain] INFO  3520 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
-2024-02-14 [restartedMain] INFO  3520 com.example.demo.DemoApplication : Started DemoApplication in 4.529 seconds (process running for 4.881)
-2024-02-14 [restartedMain] INFO  3520 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-2024-02-14 [nioEventLoopGroup-4-1] INFO  3520 c.c.socketio.SocketIOServer : SocketIO server started at port: 8990
-2024-02-14 [http-nio-8989-exec-1] INFO  3520 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  3520 o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
-2024-02-14 [http-nio-8989-exec-1] INFO  3520 o.s.web.servlet.DispatcherServlet : Completed initialization in 2 ms
-2024-02-14 [http-nio-8989-exec-5] INFO  3520 o.s.api.AbstractOpenApiResource : Init duration for springdoc-openapi is: 185 ms
-2024-02-14 [http-nio-8989-exec-10] INFO  3520 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-10] WARN  3520 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [http-nio-8989-exec-10] ERROR 3520 c.e.demo.service.UserLoginService : Run app
-2024-02-14 [SpringApplicationShutdownHook] INFO  3520 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-14 [SpringApplicationShutdownHook] INFO  3520 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
-2024-02-14 [SpringApplicationShutdownHook] INFO  3520 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-02-29 [restartedMain] INFO  14460 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 14460 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
+2024-02-29 [restartedMain] INFO  14460 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
+2024-02-29 [restartedMain] INFO  14460 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-29 [restartedMain] INFO  14460 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 3 JPA repository interfaces.
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-29 [restartedMain] INFO  14460 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-02-29 [restartedMain] INFO  14460 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
+2024-02-29 [restartedMain] INFO  14460 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
+2024-02-29 [restartedMain] INFO  14460 o.a.catalina.core.StandardService : Starting service [Tomcat]
+2024-02-29 [restartedMain] INFO  14460 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-29 [restartedMain] INFO  14460 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2024-02-29 [restartedMain] INFO  14460 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2111 ms
+2024-02-29 [restartedMain] INFO  14460 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-29 [restartedMain] INFO  14460 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-29 [restartedMain] INFO  14460 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-02-29 [restartedMain] INFO  14460 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-29 [restartedMain] INFO  14460 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-02-29 [restartedMain] INFO  14460 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1834def0
+2024-02-29 [restartedMain] INFO  14460 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-02-29 [restartedMain] WARN  14460 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-29 [restartedMain] WARN  14460 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-29 [restartedMain] WARN  14460 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
+2024-02-29 [restartedMain] WARN  14460 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
+2024-02-29 [restartedMain] WARN  14460 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
+2024-02-29 [restartedMain] WARN  14460 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
+2024-02-29 [restartedMain] INFO  14460 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-29 [restartedMain] INFO  14460 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 [restartedMain] WARN  14460 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-29 [restartedMain] INFO  14460 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4aad70a8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@213a1b58, org.springframework.security.web.context.SecurityContextHolderFilter@17add920, org.springframework.security.web.header.HeaderWriterFilter@23856d3a, org.springframework.security.web.authentication.logout.LogoutFilter@7d4fc094, com.example.demo.security.JwtAuthenticationFilter@2f55b34f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a926db0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3753dd24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28a681cb, org.springframework.security.web.session.SessionManagementFilter@2197a9cc, org.springframework.security.web.access.ExceptionTranslationFilter@14b3680e, org.springframework.security.web.access.intercept.AuthorizationFilter@54dd62b]
+2024-02-29 [restartedMain] INFO  14460 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2024-02-29 [restartedMain] INFO  14460 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
+2024-02-29 [restartedMain] INFO  14460 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
+2024-02-29 [restartedMain] INFO  14460 com.example.demo.DemoApplication : Started DemoApplication in 6.447 seconds (process running for 7.025)
+2024-02-29 [restartedMain] INFO  14460 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+2024-02-29 [nioEventLoopGroup-4-1] ERROR 14460 c.c.socketio.SocketIOServer : SocketIO server start failed at port: 8990!
+2024-02-29 [restartedMain] INFO  14460 o.s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-29 [restartedMain] ERROR 14460 o.s.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:805)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:806)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:782)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.net.BindException: Cannot assign requested address: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:565)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:380)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-29 [restartedMain] INFO  14460 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 [restartedMain] INFO  14460 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-02-29 [restartedMain] INFO  14460 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-02-29 [restartedMain] INFO  7332 com.example.demo.DemoApplication : Starting DemoApplication using Java 21.0.1 with PID 7332 (D:\messi\Documents\CODE\JAVA\demo\target\classes started by messi in D:\messi\Documents\CODE\JAVA\demo)
+2024-02-29 [restartedMain] INFO  7332 com.example.demo.DemoApplication : No active profile set, falling back to 1 default profile: "default"
+2024-02-29 [restartedMain] INFO  7332 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-29 [restartedMain] INFO  7332 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 3 JPA repository interfaces.
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ChatRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-29 [restartedMain] INFO  7332 o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-02-29 [restartedMain] INFO  7332 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8989 (http)
+2024-02-29 [restartedMain] INFO  7332 o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8989"]
+2024-02-29 [restartedMain] INFO  7332 o.a.catalina.core.StandardService : Starting service [Tomcat]
+2024-02-29 [restartedMain] INFO  7332 o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-29 [restartedMain] INFO  7332 o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2024-02-29 [restartedMain] INFO  7332 o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1543 ms
+2024-02-29 [restartedMain] INFO  7332 o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-29 [restartedMain] INFO  7332 org.hibernate.Version : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-29 [restartedMain] INFO  7332 o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-02-29 [restartedMain] INFO  7332 o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-29 [restartedMain] INFO  7332 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-02-29 [restartedMain] INFO  7332 com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a36fe84
+2024-02-29 [restartedMain] INFO  7332 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-02-29 [restartedMain] WARN  7332 org.hibernate.orm.deprecation : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-29 [restartedMain] WARN  7332 org.hibernate.orm.deprecation : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-29 [restartedMain] WARN  7332 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.ChatId
+2024-02-29 [restartedMain] WARN  7332 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.ChatId
+2024-02-29 [restartedMain] WARN  7332 org.hibernate.mapping.RootClass : HHH000038: Composite-id class does not override equals(): com.example.demo.entity.keys.TaskId
+2024-02-29 [restartedMain] WARN  7332 org.hibernate.mapping.RootClass : HHH000039: Composite-id class does not override hashCode(): com.example.demo.entity.keys.TaskId
+2024-02-29 [restartedMain] INFO  7332 o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-29 [restartedMain] INFO  7332 o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 [restartedMain] WARN  7332 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-29 [restartedMain] INFO  7332 o.s.s.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@113d22be, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32227cbb, org.springframework.security.web.context.SecurityContextHolderFilter@6672210, org.springframework.security.web.header.HeaderWriterFilter@48a6ca46, org.springframework.security.web.authentication.logout.LogoutFilter@211f783, com.example.demo.security.JwtAuthenticationFilter@131c8dda, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77282eb6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3db13b45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e5b9251, org.springframework.security.web.session.SessionManagementFilter@1e2b67aa, org.springframework.security.web.access.ExceptionTranslationFilter@446daad9, org.springframework.security.web.access.intercept.AuthorizationFilter@50be7042]
+2024-02-29 [restartedMain] INFO  7332 o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2024-02-29 [restartedMain] INFO  7332 o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8989"]
+2024-02-29 [restartedMain] INFO  7332 o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8989 (http) with context path ''
+2024-02-29 [restartedMain] INFO  7332 com.example.demo.DemoApplication : Started DemoApplication in 4.871 seconds (process running for 5.261)
+2024-02-29 [restartedMain] INFO  7332 c.c.socketio.SocketIOServer : Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+2024-02-29 [nioEventLoopGroup-4-1] ERROR 7332 c.c.socketio.SocketIOServer : SocketIO server start failed at port: 8990!
+2024-02-29 [restartedMain] INFO  7332 o.s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-29 [restartedMain] ERROR 7332 o.s.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:805)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:806)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:782)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.net.BindException: Cannot assign requested address: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:565)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:380)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-29 [restartedMain] INFO  7332 o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 [restartedMain] INFO  7332 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-02-29 [restartedMain] INFO  7332 com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
