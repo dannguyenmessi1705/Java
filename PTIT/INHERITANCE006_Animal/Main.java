@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+package PTIT.INHERITANCE006_Animal;
 
 public class Main {
     public static void main(String[] $) {
@@ -16,19 +15,8 @@ public class Main {
 
         cat.walk();
         spider.walk();
-    }
-}
-abstract class Animal {
-    protected int legs;
 
-    protected Animal(int legs) {
-        this.legs = legs;
     }
-    public void walk(){
-        System.out.printf("This animal walks on %d legs.\n", legs);
-    }
-    public void eat(){}
-
 }
 
 interface Pet {
@@ -39,8 +27,19 @@ interface Pet {
     public void play();
 }
 
-class Spider extends Animal{
-    public Spider(){
+class Animal {
+    protected int legs;
+    protected Animal(int legs) {
+        this.legs = legs;
+    }
+    public void walk(){
+        System.out.printf("This animal walks on %d legs.\n", legs);
+    }
+    public void eat(){}
+}
+
+class Spider extends Animal {
+    public Spider() {
         super(8);
     }
     @Override
@@ -49,7 +48,7 @@ class Spider extends Animal{
     }
 }
 
-class Fish extends Animal implements Pet {
+class Fish extends Animal implements Pet{
     private String name;
     public Fish(){
         super(0);
@@ -85,10 +84,9 @@ class Cat extends Animal implements Pet{
         super(4);
         this.name = name;
     }
-    public Cat() {
+    public Cat(){
         super(4);
     }
-
     @Override
     public String getName() {
         return name;
