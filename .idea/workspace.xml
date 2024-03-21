@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7fba296f-a68a-4217-b09e-3db40eac25f0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PTIT/COLLECTION001_Warehouse/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/COLLECTION002_Remove_shorter_strings/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/COLLECTION003_Rarest/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/INHERITANCE006_Animal/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/INTERFACE001_Interface_practice/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/INTERFACE002_TacoBox/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/OOP001_Transaction_Bank_Account/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PTIT/OOP002_class_Rectangle/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2dWsNRRvNanL0D5o9BhLhCG3zCS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PTIT.COLLECTION003_Rarest.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PTIT.INHERITANCE003_Grocery_Bill.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PTIT.LAB02_FlightBooking_Booking_Class.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PTIT.STACK001_Compress_Duplicate.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/didannguyen/DATA/messi/Documents/CODE/social&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.PTIT.COLLECTION003_Rarest.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PTIT.COLLECTION002_Remove_shorter_strings.Main" />
+      <module name="CODE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PTIT.COLLECTION002_Remove_shorter_strings.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PTIT.COLLECTION003_Rarest.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PTIT.COLLECTION003_Rarest.Main" />
+      <module name="CODE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PTIT.COLLECTION003_Rarest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PTIT.INHERITANCE006_Animal.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PTIT.INHERITANCE006_Animal.Main" />
+      <module name="CODE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PTIT.INHERITANCE006_Animal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PTIT.OOP001_Transaction_Bank_Account.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PTIT.OOP001_Transaction_Bank_Account.Main" />
+      <module name="CODE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PTIT.OOP001_Transaction_Bank_Account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PTIT.OOP002_class_Rectangle.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PTIT.OOP002_class_Rectangle.Main" />
+      <module name="CODE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PTIT.OOP002_class_Rectangle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PTIT.COLLECTION003_Rarest.Main" />
+        <item itemvalue="Application.PTIT.OOP002_class_Rectangle.Main" />
+        <item itemvalue="Application.PTIT.OOP001_Transaction_Bank_Account.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.PTIT.INHERITANCE006_Animal.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fba296f-a68a-4217-b09e-3db40eac25f0" name="Changes" comment="" />
+      <created>1710135133034</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710135133034</updated>
+      <workItem from="1710135135447" duration="54000" />
+      <workItem from="1710135201335" duration="66000" />
+      <workItem from="1710135286300" duration="114000" />
+      <workItem from="1710137075120" duration="6968000" />
+      <workItem from="1710340703758" duration="134000" />
+      <workItem from="1710600298200" duration="7000" />
+      <workItem from="1710728944434" duration="4128000" />
+      <workItem from="1710741816059" duration="2956000" />
+      <workItem from="1710776437197" duration="6000" />
+      <workItem from="1710914518598" duration="2171000" />
+      <workItem from="1710916718799" duration="13000" />
+      <workItem from="1710916741659" duration="6743000" />
+      <workItem from="1711030218830" duration="144000" />
+      <workItem from="1711030431097" duration="491000" />
+      <workItem from="1711030932376" duration="78000" />
+      <workItem from="1711041164805" duration="41000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
