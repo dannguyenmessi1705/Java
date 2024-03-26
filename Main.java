@@ -1,68 +1,74 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] Nguyen_Di_Dan) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int test = Integer.parseInt(sc.nextLine());
-        Herd herd = new Herd();
-        while (test-- > 0){
-            String[] s = sc.nextLine().split(" ");
-            herd.addToHerd(new Organism(Integer.parseInt(s[0]), Integer.parseInt(s[1])));
+        int t = sc.nextInt();
+        sc.nextLine();
+        while (t-- > 0) {
+            String kind = sc.nextLine();
+            System.out.println(kind);
+            if (kind.equals("e")) {
+                Essay es = new Essay(sc);
+                es.readQuestion();
+            } else if (kind.equals("m")) {
+                MultChoice mu = new MultChoice();
+                mu.addAnswer(sc);
+                mu.readQuestion();
+            }
         }
-        herd.move(1, 1);
-        System.out.print(herd);
+        sc.close();
     }
 }
 
-interface Moveable {
-    void move(int dx, int dy);
+
+abstract class TestQuestion {
+    protected String question;
+
+    protected abstract void readQuestion();
 }
 
-class Organism implements Moveable {
-    private int x;
-    private int y;
+class Essay extends TestQuestion {
+    private int line;
 
-    public Organism(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Essay(Scanner sc) {
+        this.line = Integer.parseInt(sc.nextLine());
+        this.question = sc.nextLine();
     }
 
-    public void move(int dx, int dy) {
-        x += dx;
-        y += dy;
-    }
-
-    @Override
     public String toString() {
-        return String.format("x:%d;y:%d", x, y);
+        return line + "\n" + question;
+    }
+
+    @Override
+    public void readQuestion() {
+        System.out.println(this.toString());
     }
 }
 
-class Herd {
-    private List<Organism> organisms = new ArrayList<>();
+class MultChoice extends TestQuestion {
+    private int answers;
+    private String[] allanswer;
 
-    public void addToHerd(Moveable moveable){
-        if(moveable instanceof Organism){
-            organisms.add((Organism) moveable);
+    public void addAnswer(Scanner sc) {
+        this.answers = Integer.parseInt(sc.nextLine());
+        allanswer = new String[answers];
+        question = sc.nextLine();
+        for (int i = 0; i < answers; i++) {
+            allanswer[i] = sc.nextLine();
         }
     }
-    public void move(int dx, int dy) {
-        for (Moveable organism : organisms) {
-            if (organism instanceof Organism){
-                organism.move(dx, dy);
-            }
-        }
+
+    public String toString() {
+        return answers + "\n" + question;
     }
+
     @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        for (Moveable organism : organisms) {
-            if (organism instanceof Organism){
-                sb.append(organism.toString()).append(organism.equals(organisms.get(organisms.size()-1)) ? "" : "\n");
-            }
+    public void readQuestion() {
+        System.out.println(this.toString());
+        for (int i = 0; i < answers; i++) {
+            if (i == answers - 1) System.out.print(allanswer[i]);
+            else  System.out.println(allanswer[i]);
         }
-        return sb.toString();
     }
 }
