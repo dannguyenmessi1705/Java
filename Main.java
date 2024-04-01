@@ -1,74 +1,53 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void CheckFileExtension(String fileName) throws NotJavaFileException {
+        if (fileName == null || fileName.length() == 0) {
+            throw new NotJavaFileException("Not java file exception.Mark is -1");
+        }
+        if (fileName.endsWith(".java"))
+            System.out.println(1);
+        else
+            System.out.println(0);
+    }
+
+    public static void main(String[] $$$$$) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        sc.nextLine();
-        while (t-- > 0) {
-            String kind = sc.nextLine();
-            System.out.println(kind);
-            if (kind.equals("e")) {
-                Essay es = new Essay(sc);
-                es.readQuestion();
-            } else if (kind.equals("m")) {
-                MultChoice mu = new MultChoice();
-                mu.addAnswer(sc);
-                mu.readQuestion();
+        int test = Integer.parseInt(sc.nextLine());
+        while (test-- > 0) {
+            try {
+                // Person p = new Person(sc.nextLine(), Integer.parseInt(sc.nextLine()));
+                // System.out.println(p);
+                CheckFileExtension(sc.nextLine());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
         }
-        sc.close();
     }
 }
 
-
-abstract class TestQuestion {
-    protected String question;
-
-    protected abstract void readQuestion();
-}
-
-class Essay extends TestQuestion {
-    private int line;
-
-    public Essay(Scanner sc) {
-        this.line = Integer.parseInt(sc.nextLine());
-        this.question = sc.nextLine();
-    }
-
-    public String toString() {
-        return line + "\n" + question;
-    }
-
-    @Override
-    public void readQuestion() {
-        System.out.println(this.toString());
+class NotJavaFileException extends Exception {
+    public NotJavaFileException(String message) {
+        super(message);
     }
 }
 
-class MultChoice extends TestQuestion {
-    private int answers;
-    private String[] allanswer;
-
-    public void addAnswer(Scanner sc) {
-        this.answers = Integer.parseInt(sc.nextLine());
-        allanswer = new String[answers];
-        question = sc.nextLine();
-        for (int i = 0; i < answers; i++) {
-            allanswer[i] = sc.nextLine();
-        }
-    }
-
-    public String toString() {
-        return answers + "\n" + question;
-    }
-
-    @Override
-    public void readQuestion() {
-        System.out.println(this.toString());
-        for (int i = 0; i < answers; i++) {
-            if (i == answers - 1) System.out.print(allanswer[i]);
-            else  System.out.println(allanswer[i]);
-        }
-    }
-}
+// class Person {
+// String name;
+// int age;
+// public Person(String name, int age) throws Exception{
+// if (name == null || name.length()==0 || name.length() > 40){
+// throw new Exception("Name is not valid");
+// } else if (age < 0 || age > 120) {
+// throw new Exception("Age is not valid");
+// }
+// this.name = name;
+// this.age = age;
+// }
+// @Override
+// public String toString(){
+// return String.format("Name: %s--Age:%d", this.name, this.age);
+// }
+// }
