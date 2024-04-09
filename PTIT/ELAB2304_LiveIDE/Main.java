@@ -1,11 +1,4 @@
-public class Main{
-    public static void main(String[] args) {
-        D d = new D();
-        d.m();
-        d.n("OOP23");
-        System.out.println(d.d);
-    }
-}
+package PTIT.ELAB2304_LiveIDE;
 
 interface A{
     void m();
@@ -23,4 +16,12 @@ class C implements A{
 }
 class D extends C{
     boolean d=true;
+}
+public class Main{
+    public static void main(String[] args) {
+        D d = new D();
+        d.m();
+        d.n("OOP23");
+        System.out.println(d.d);
+    }
 }
