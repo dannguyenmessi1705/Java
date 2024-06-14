@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.uRemoveShorterStringScanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Main {
+public class TimTuDaiNhat {
     public static class Account {
         private String id;
         private String name;
@@ -73,13 +73,13 @@ public class Main {
         int test = Integer.parseInt(sc.nextLine());
         while (test-- > 0) {
             int n = sc.nextInt();
-            List<Main.Account> accounts = new ArrayList<>();
+            List<TimTuDaiNhat.Account> accounts = new ArrayList<>();
             String accountList = sc.nextLine();
             String[] balanceArr = accountList.split("\\D+");
             String[] accountArr = accountList.split("\\d+");
             int cnt = 0;
             for (int i = 0; i < n; i++) {
-                Main.Account account = new Main.Account(String.format("%03d", i + 1), accountArr[i].trim(),
+                TimTuDaiNhat.Account account = new TimTuDaiNhat.Account(String.format("%03d", i + 1), accountArr[i].trim(),
                         Long.parseLong(balanceArr[i + 1].trim()));
                 accounts.add(account);
             }
@@ -92,7 +92,7 @@ public class Main {
                     break;
                 count++;
                 if (taskArr[i].equals("nap")) {
-                    for (Main.Account account : accounts) {
+                    for (TimTuDaiNhat.Account account : accounts) {
                         if (Integer.parseInt(account.getId()) == Integer.parseInt(taskArr[i + 1])) {
                             account.nap(Long.parseLong(taskArr[i + 2]));
                             break;
@@ -100,7 +100,7 @@ public class Main {
                     }
                     i = i + 3;
                 } else if (taskArr[i].equals("rut")) {
-                    for (Main.Account account : accounts) {
+                    for (TimTuDaiNhat.Account account : accounts) {
                         if (Integer.parseInt(account.getId()) == Integer.parseInt(taskArr[i + 1])) {
                             account.rut(Long.parseLong(taskArr[i + 2]));
                             break;
@@ -108,9 +108,9 @@ public class Main {
                     }
                     i = i + 3;
                 } else if (taskArr[i].equals("chuyen")) {
-                    for (Main.Account account : accounts) {
+                    for (TimTuDaiNhat.Account account : accounts) {
                         if (Integer.parseInt(account.getId()) == Integer.parseInt(taskArr[i + 1])) {
-                            for (Main.Account account1 : accounts) {
+                            for (TimTuDaiNhat.Account account1 : accounts) {
                                 if (Integer.parseInt(account1.getId()) == Integer.parseInt(taskArr[i + 2])) {
                                     account.chuyen(account1, Long.parseLong(taskArr[i + 3]));
                                     break;
@@ -125,7 +125,7 @@ public class Main {
                     count--;
                 }
             }
-            for (Main.Account account : accounts) {
+            for (TimTuDaiNhat.Account account : accounts) {
                 System.out.print(account);
             }
             System.out.println();
